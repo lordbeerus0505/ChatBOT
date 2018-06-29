@@ -1,0 +1,47 @@
+[
+
+    {"text": "hello", "label": "greetings-welcome"},
+    {"text": "hi", "label": "greetings-welcome"},
+    {"text": "sup", "label": "greetings-welcome"},
+    {"text": "good morning", "label": "greetings-welcome"},
+    {"text": "good evening", "label": "greetings-welcome"},
+
+
+    {"text": "how are you", "label": "greetings-question"},
+    {"text": "what can you do", "label": "greetings-question"},
+    {"text": "where are you from", "label": "greetings-question"},
+
+
+    {"text": "can i have ice cream", "label": "buy"},
+    {"text": "could i have ice cream", "label": "buy"},
+    {"text": "may i have ice cream", "label": "buy"},
+    {"text": "i want buy ice cream", "label": "buy"},
+    {"text": "i want to purchase", "label": "buy"},
+    {"text": "like to have", "label": "buy"},
+
+    {"text": "do you have", "label": "enquiry"},
+    {"text": "can see card", "label": "enquiry"},
+    {"text": "show menu card", "label": "enquiry"},
+    {"text": "can i look the menu", "label": "enquiry"},
+
+    {"text": "can i know the price", "label": "cost"},
+    {"text": "can i know the cost", "label": "cost"},
+    {"text": "could i know the price", "label": "cost"},
+    {"text": "could i know the cost", "label": "cost"},
+    {"text": "tell me the price", "label": "cost"},
+  {"text": "how much does ice cream cost", "label": "cost"},
+
+
+
+    {"text": "i dont want ", "label": "not"},
+  {"text": "anything else", "label": "not"},
+  {"text": "other than this ", "label": "not"},
+  {"text": "beside", "label": "not"},
+
+
+
+
+
+
+  {"text": " want to leave ", "label": "leave"}
+]

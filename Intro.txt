@@ -1,0 +1,5 @@
+I'm Alice, your chatting assistance. I am a project bot and I can perform the following things-
+I can generate replies to basic questions.
+I can produce google results on queries that i cannot comprehend.
+I use a machine learning and NLP to classify text passed by you so as to understand what you are talking about.
+All data processed by me is saved in my database to improve my results for similar outcomes in the future- Thus I am a forever evolving BOT
