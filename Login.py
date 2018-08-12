@@ -19,7 +19,9 @@ class Login:
 		global db
 		global cursor
 		log=Login()
-		db=MySQLdb.connect("localhost","root","#","Login_DB")
+
+		db=MySQLdb.connect("localhost","root","","Login_DB")
+
 		cursor=db.cursor()
 		cursor.execute("SELECT username FROM credentials")
 		uname=cursor.fetchall()
@@ -68,7 +70,9 @@ class Login:
 		global password
 		global db
 		global cursor
-		db=MySQLdb.connect("localhost","root","#","Login_DB")
+
+		db=MySQLdb.connect("localhost","root","","Login_DB")
+
 		cursor=db.cursor()
 		cursor.execute("SELECT username FROM credentials")
 		uname=cursor.fetchall()
