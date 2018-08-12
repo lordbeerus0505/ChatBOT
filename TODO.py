@@ -9,14 +9,14 @@ class Todo:
 		#username is the primary key in table 1 use as foreign in table 2
 		title=input("Enter the title: ")
 		description=input("Enter the description: ")
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		cursor.execute("INSERT INTO TODO VALUES (\""+title+"\",\""+description+"\",\""+username+"\")")
 		db.commit()
 		print("Your TODO list has been updated")
 
 	def delete_item(self,title,username):
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		cursor.execute("SELECT Title from TODO where username=\'"+username+"\'")
 		results=str(cursor.fetchall())
@@ -33,7 +33,7 @@ class Todo:
 			return True
 
 	def view_items(self,username):
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		cursor.execute("SELECT * FROM TODO WHERE username=\'"+username+"\'")
 		todo_list=cursor.fetchall()

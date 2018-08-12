@@ -12,6 +12,7 @@ from Calculator import Calculate
 from GOOGLEscrape import Search
 from Login import Login
 from TODO import Todo
+from Mails import Mail
 
 # '''
 # '''
@@ -24,7 +25,8 @@ def main():
 # Basic response to begin conversation
     #first perform a login
     obj=Reminder()
-    global counter
+    mailobj=Mail()
+    global counter 
     global name
     global username
     log=Login()
@@ -45,6 +47,11 @@ def main():
         
         time.sleep(0.5)
         obj.RemindersToday(username)
+        print("Here are your emails")
+
+        time.sleep(2)
+        mailobj.LatestMails()
+        time.sleep(1)
         print("How can I help you?")
        #reception of inputs, for each input, perform processing to understand what the input requires.
    
@@ -61,8 +68,26 @@ def main():
     while process(Statement)!=-1:
         #preprocessing done
         Statement=input("How can I help you?\n")
-        print("Loading...")
+        #print("Loading...")
 
+def mail(sentence):
+    W=open("mails.txt","r")
+    contents=W.read().split("\n")
+    for i in contents:
+        if i in sentence:
+            #positive response means send mail or some mail action
+            if sentence.find("show")>=0 or sentence.find("display")>=0:
+                #have to show mails... show latest 5 mails...
+                obj=Mail()
+                obj.show_mails()
+            else:
+                to=input("Enter to address")
+                From=input("Enter from address")
+                subject=input("Enter subject of message")
+                body=input("Enter body of message")
+                print("Thank You, Your request is being processed")
+                obj=Mail()
+                obj.send_mail(From,to,subject,body)
 def todo(sentence):
     W=open("todo.txt","r")
     contents=W.read().split("\n")
@@ -141,7 +166,7 @@ def process(sentence):
     calc=Calculate()
     regex=re.compile(r'[+*%]')
     if flag==0:
-        if re.search(r'\d',sentence) and re.findall(r'\d+|[+/*-]',sentence):
+        if  re.findall(r'[+/*-]',sentence):
             for i in sentence:
                 if i in string.ascii_letters or i =='.' or i=='?' or i=='!':
                     sentence=sentence.replace(i,"")
@@ -153,6 +178,8 @@ def process(sentence):
     if reminder(sentence)!=False:
         return
     if todo(sentence)!=False:
+        return
+    if mail(sentence)!=False:
         return
 
     obj = Search()

@@ -4,7 +4,7 @@ import os
 
 class Reminder:
 	def SetReminder(self,username):
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		time=input("Enter the time of the event in DDMMYYHHMM: ")
 		if len(time)!=10:
@@ -15,7 +15,7 @@ class Reminder:
 		print("Successfull saved a reminder")
 		return
 	def ShowReminder(self,username):
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		
 		#start deleting the old reminders, before the current day but the program has to run everyday then
@@ -35,7 +35,7 @@ class Reminder:
 		#print(results)
 	def RemindersToday(self,username):
 		today = time.strftime('%d%m%y')#As long as the day matches were good to go
-		db=MySQLdb.connect("localhost","root","abhiawesome007","Login_DB")
+		db=MySQLdb.connect("localhost","root","#","Login_DB")
 		cursor=db.cursor()
 		cursor.execute("SELECT * FROM Reminder WHERE username=\""+username+ "\"")
 		results=cursor.fetchall()

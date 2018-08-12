@@ -70,10 +70,17 @@ class Search:
         if N==2:
             for l in list:
                 s=str(l['description'])
-
-                print("\n"+s)
+                #s="defn is to do something practical. Learn More. Pokemon is awesome."
+                t=''
+                #remove irrelevant text, go for the first sentence
+                for i in s.split("."):
+                    if "Learn More" not in i and "More example" not in i:
+                        t=t+i
+                print("\n"+t)
                 break
 
             return
 
     #search(q)
+
+
